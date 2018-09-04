@@ -20,18 +20,18 @@ def register_user(request):
   new_user = User.objects.create_user(
       username=req_body['username'],
       password=req_body['password'],
-      # email=req_body['email'],
-      # first_name=req_body['first_name'],
-      # last_name=req_body['last_name'],
+      email=req_body['email'],
+      first_name=req_body['first_name'],
+      last_name=req_body['last_name'],
   )
   # # make new customer for that user
-  # new_customer = Customer.objects.create(
-  #     user=new_user,
-  #     street_address=req_body['street'],
-  #     city=req_body['city'],
-  #     state=req_body['state'],
-  #     zipcode=req_body['zip'],
-  # )
+  new_customer = Customer.objects.create(
+      user=new_user,
+      street_address=req_body['street'],
+      city=req_body['city'],
+      state=req_body['state'],
+      zipcode=req_body['zip'],
+  )
 
   token = Token.objects.create(user=new_user)
 

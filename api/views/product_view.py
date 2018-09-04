@@ -8,3 +8,11 @@ class ProductTypeViewSet(viewsets.ModelViewSet):
   """
   queryset = ProductType.objects.all().order_by("title")
   serializer_class = ProductTypeSerializer
+
+
+class ProductViewSet(viewsets.ModelViewSet):
+  """
+  API endpoint that allows Products to be viewed or edited
+  """
+  queryset = Product.objects.all().order_by("title")
+  serializer_class = ProductSerializer
