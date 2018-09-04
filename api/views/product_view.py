@@ -16,3 +16,7 @@ class ProductViewSet(viewsets.ModelViewSet):
   """
   queryset = Product.objects.all().order_by("title")
   serializer_class = ProductSerializer
+
+  def perform_create(self, serializer):
+    # Since we don't pass the user info in the POST body from the client app, we add that info here as the argument to our overridden version of the save() method
+    serializer.save(seller=self.request.user)

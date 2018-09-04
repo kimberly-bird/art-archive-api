@@ -1,9 +1,9 @@
 from django.db import models
-from .customer_model import Customer
+from django.contrib.auth.models import User
 from .producttype_model import ProductType
 
 class Product(models.Model):
-  # customer =models.ForeignKey('Customer', on_delete=models.CASCADE, related_name='products')
+  seller = models.ForeignKey(User, on_delete=models.CASCADE, related_name='products', default="")
   product_type = models.ForeignKey('ProductType', on_delete=models.CASCADE, related_name='products')
   title = models.CharField(max_length=25)
   description = models.CharField(max_length=255)
