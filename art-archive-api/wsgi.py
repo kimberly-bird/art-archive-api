@@ -1,5 +1,5 @@
 """
-WSGI config for bobross_bangazonAPI project.
+WSGI config for art-archive-api project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bobross_bangazonAPI.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'art-archive-api.settings')
 
 application = get_wsgi_application()

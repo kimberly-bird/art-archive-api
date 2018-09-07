@@ -1,4 +1,4 @@
-"""bobross_bangazonAPI URL Configuration
+"""art-archive-api URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.1/topics/http/urls/
@@ -21,9 +21,7 @@ from rest_framework.authtoken.views import obtain_auth_token
 from api.views import *
 
 router = routers.DefaultRouter()
-router.register(r'users', customer_view.UserViewSet)
-router.register(r'product_types', product_view.ProductTypeViewSet)
-router.register(r'products', product_view.ProductViewSet)
+router.register(r'users', user_view.UserViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
