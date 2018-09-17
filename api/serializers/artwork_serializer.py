@@ -19,7 +19,6 @@ class ArtworkSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
             'id',
             'url',
-            'name',
             'user',
             'art_type',
             'artist',

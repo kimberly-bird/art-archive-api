@@ -6,7 +6,7 @@ class OwnerViewSet(viewsets.ModelViewSet):
   """
   API endpoint that allows Owners to be viewed or edited
   """
-  queryset = Owner.objects.all().order_by("title")
+  queryset = Owner.objects.all().order_by("first_name")
   serializer_class = OwnerSerializer
 
 

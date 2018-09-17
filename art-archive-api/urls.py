@@ -22,11 +22,16 @@ from api.views import *
 
 router = routers.DefaultRouter()
 router.register(r'users', user_view.UserViewSet)
+router.register(r'artwork', artwork_view.ArtworkViewSet)
+router.register(r'arttype', arttype_view.ArtTypeViewSet)
+router.register(r'artist', artist_view.ArtistViewSet)
+router.register(r'condition', condition_view.ConditionViewSet)
+router.register(r'owner', owner_view.OwnerViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^', include(router.urls)),
     url(r'^register/', register_view.register_user),
     url(r'^api-token-auth/', obtain_auth_token),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
