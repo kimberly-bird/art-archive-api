@@ -1,10 +1,10 @@
 from rest_framework import serializers
 from api.models import *
-from .user_serializer import User
-from .arttype_serializer import ArtType
-from .artist_serializer import Artist
-from .condition_serializer import Condition
-from .owner_serializer import Owner
+from .user_serializer import UserSerializer
+from .arttype_serializer import ArtTypeSerializer
+from .artist_serializer import ArtistSerializer
+from .condition_serializer import ConditionSerializer
+from .owner_serializer import OwnerSerializer
 
 
 class ArtworkSerializer(serializers.HyperlinkedModelSerializer):

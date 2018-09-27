@@ -6,7 +6,7 @@ class ArtTypeViewSet(viewsets.ModelViewSet):
   """
   API endpoint that allows ArtTypes to be viewed or edited
   """
-  queryset = ArtType.objects.all().order_by("name")
+  queryset = ArtType.objects.all().order_by("id")
   serializer_class = ArtTypeSerializer
 
 
