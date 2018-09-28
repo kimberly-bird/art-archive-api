@@ -6,7 +6,7 @@ class ArtistViewSet(viewsets.ModelViewSet):
   """
   API endpoint that allows Artists to be viewed or edited
   """
-  queryset = Artist.objects.all().order_by("title")
+  queryset = Artist.objects.all().order_by("id")
   serializer_class = ArtistSerializer
 
 
