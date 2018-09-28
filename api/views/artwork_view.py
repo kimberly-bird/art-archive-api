@@ -7,13 +7,12 @@ class ArtworkViewSet(viewsets.ModelViewSet):
   """
   API endpoint that allows Artworks to be viewed or edited
   """
-  queryset = Artwork.objects.all().order_by("title")
+  queryset = Artwork.objects.all().order_by("id")
   serializer_class = ArtworkSerializer
 
   def perform_create(self, serializer):
-    # Since we don't pass the user info in the POST body from the client app, we add that info here as the argument to our overridden version of the save() method
     serializer.save(user=self.request.user)
-    serializer.save(art_type=self.request.user)
-    serializer.save(artist=self.request.user)
-    serializer.save(condition=self.request.user)
-    serializer.save(owner=self.request.user)
+    serializer.save(art_type=self.request.art_type)
+    serializer.save(artist=self.request.artist)
+    serializer.save(condition=self.request.condition)
+    serializer.save(owner=self.request.owner)
